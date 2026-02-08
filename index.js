@@ -18,7 +18,7 @@ const rateLimit = require("express-rate-limit");
 
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT||3000;
 
 const resetCodeLimiter = rateLimit({
   windowMs: 5 * 60 * 1000,
@@ -193,7 +193,7 @@ app.post(
     }
   }
 );
-router.get("/formdesigner/:id?", async (req, res) => {
+app.get("/formdesigner/:id?", async (req, res) => {
   const formId = Number(req.params.id || 0);
 
   // Basit model (istersen DB'den çek)
@@ -285,17 +285,17 @@ app.post("/resetCache/31b17f2e695656acb181857bf8472896f657454ac7db78a9985719e52d
 
 async function startServer() {
   try {
-    console.log("Loading data...");
-    AllContentCache = await getContentWithCacheForAllUsers();
-    console.log("Load Post data...");
-    UserLastGPS = await getUserLastGPSData();
-    console.log("Load GPS data...");
-    console.log("Data loaded.");
-    setInterval(async () => {
-      console.timeLog("Loading data...");
-      AllContentCache = await getContentWithCacheForAllUsers();
-      console.timeLog("Load Post data...");
-    }, 60 * 60 * 1000);
+    // console.log("Loading data...");
+    // AllContentCache = await getContentWithCacheForAllUsers();
+    // console.log("Load Post data...");
+    // UserLastGPS = await getUserLastGPSData();
+    // console.log("Load GPS data...");
+    // console.log("Data loaded.");
+    // setInterval(async () => {
+    //   console.timeLog("Loading data...");
+    //   AllContentCache = await getContentWithCacheForAllUsers();
+    //   console.timeLog("Load Post data...");
+    // }, 60 * 60 * 1000);
     app.listen(port, () => {
       console.log(`Server is running on port http://localhost:${port}`);
     });
