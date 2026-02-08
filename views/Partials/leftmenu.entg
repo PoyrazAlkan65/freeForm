@@ -1,0 +1,45 @@
+<aside class="app-sidebar bg-body">
+  <div class="sidebar">
+    <nav class="mt-3">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-lte-toggle="treeview" role="menu">
+        <li class="nav-item">
+          <a href="/index" class="nav-link {{#ifEq menuData.active 'durum'}}active{{/ifEq}}">
+            <i class="nav-icon fa-solid fa-gauge"></i>
+            <p>Durum</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/patients" class="nav-link {{#ifEq menuData.active 'patients'}}active{{/ifEq}}">
+            <i class="nav-icon fa-solid fa-user-injured"></i>
+            <p>Hastalar</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/nutrition-plans" class="nav-link {{#ifEq menuData.active 'nutrition-plans'}}active{{/ifEq}}">
+            <i class="nav-icon fa-solid fa-bottle-water"></i>
+            <p>Beslenme Planları</p>
+          </a>
+        </li>
+         <li class="nav-item">
+          <a href="/nutrition-cuts" class="nav-link {{#ifEq menuData.active 'nutrition-cuts'}}active{{/ifEq}}">
+            <i class="nav-icon fa-solid fa-vial"></i>
+            <p>Beslenme Kesintileri</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/laboratory-results" class="nav-link {{#ifEq menuData.active 'lab_results'}}active{{/ifEq}}">
+            <i class="nav-icon fa-solid fa-vial"></i>
+            <p>Laboratuvar Sonuçları</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/reports" class="nav-link {{#ifEq menuData.active 'reports'}}active{{/ifEq}}">
+            <i class="nav-icon fa-solid fa-chart-line"></i>
+            <p>Raporlar ve Sonuçlar</p>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</aside>

@@ -1,0 +1,114 @@
+<div class="ach-fd-root" data-formid="{{formId}}" data-ajaxbase="{{feSourceAjaxUrl}}">
+  <header class="ach-fd-topbar">
+    <div class="ach-fd-brand">
+      <span class="ach-fd-badge">ACH</span>
+      <strong>Form Designer</strong>
+      <span class="ach-fd-muted">FormId: {{formId}}</span>
+    </div>
+
+    <div class="ach-fd-actions">
+      <button class="ach-btn ach-btn-ghost" id="btnPreview">Önizleme</button>
+      <button class="ach-btn" id="btnSave">Kaydet</button>
+    </div>
+  </header>
+
+  <section class="ach-fd-body">
+    <!-- Sol: Toolbox -->
+    <aside class="ach-fd-panel ach-fd-toolbox">
+      <div class="ach-fd-panel-title">Alanlar</div>
+
+      <div class="ach-fd-tool" draggable="true" data-type="text">Metin (Text)</div>
+      <div class="ach-fd-tool" draggable="true" data-type="email">E-posta</div>
+      <div class="ach-fd-tool" draggable="true" data-type="phone">Telefon</div>
+      <div class="ach-fd-tool" draggable="true" data-type="textarea">Açıklama (Textarea)</div>
+      <div class="ach-fd-tool" draggable="true" data-type="select">Seçim (Select)</div>
+      <div class="ach-fd-tool" draggable="true" data-type="radio">Radio</div>
+      <div class="ach-fd-tool" draggable="true" data-type="checkbox">Checkbox</div>
+      <div class="ach-fd-tool" draggable="true" data-type="date">Tarih</div>
+
+      <hr class="ach-fd-hr"/>
+
+      <div class="ach-fd-panel-title">Form Ayarları</div>
+      <label class="ach-fd-label">Form Başlığı</label>
+      <input class="ach-fd-input" id="FormTitle" placeholder="Örn: Başvuru Formu"/>
+
+      <label class="ach-fd-label">Açıklama</label>
+      <textarea class="ach-fd-input" id="FormDesc" rows="3" placeholder="Kısa açıklama..."></textarea>
+
+      <label class="ach-fd-label">Buton Yazısı</label>
+      <input class="ach-fd-input" id="ActionButtonText" placeholder="Örn: Gönder"/>
+    </aside>
+
+    <!-- Orta: Canvas -->
+    <main class="ach-fd-canvas">
+      <div class="ach-fd-canvas-head">
+        <div>
+          <div class="ach-fd-canvas-title">Canvas</div>
+          <div class="ach-fd-muted">Sürükle-bırak ile alan ekle. Alanı seçince sağdan düzenle.</div>
+        </div>
+        <div class="ach-fd-canvas-meta">
+          <span id="fieldCount">0 alan</span>
+        </div>
+      </div>
+
+      <div class="ach-fd-dropzone" id="dropzone">
+        <div class="ach-fd-drop-hint" id="dropHint">
+          Buraya alan sürükleyip bırak 👇
+        </div>
+
+        <div class="ach-fd-form" id="formCanvas">
+          <!-- Field items burada -->
+        </div>
+
+        <div class="ach-fd-submit-preview">
+          <button class="ach-btn" type="button" id="submitPreviewBtn">Gönder</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sağ: Properties -->
+    <aside class="ach-fd-panel ach-fd-props">
+      <div class="ach-fd-panel-title">Özellikler</div>
+
+      <div class="ach-fd-empty" id="propsEmpty">
+        Bir alan seç. (Canvas içinden)
+      </div>
+
+      <div id="propsEditor" class="ach-hidden">
+        <label class="ach-fd-label">FieldName</label>
+        <input class="ach-fd-input" id="FieldName"/>
+
+        <label class="ach-fd-label">Başlık (FieldTitle)</label>
+        <input class="ach-fd-input" id="FieldTitle"/>
+
+        <label class="ach-fd-label">Tip</label>
+        <input class="ach-fd-input" id="FieldType" disabled/>
+
+        <label class="ach-fd-label">Options (Select/Radio)</label>
+        <textarea class="ach-fd-input" id="FieldOptions" rows="4" placeholder='["A","B"] veya satır satır'></textarea>
+
+        <label class="ach-fd-label">Valid Script</label>
+        <textarea class="ach-fd-input" id="FieldValidScript" rows="4" placeholder="JS validasyon..."></textarea>
+
+        <label class="ach-fd-label">CSS</label>
+        <textarea class="ach-fd-input" id="FieldCss" rows="3" placeholder=".myclass{...}"></textarea>
+
+        <div class="ach-fd-row">
+          <label class="ach-fd-check">
+            <input type="checkbox" id="IsActive" checked/>
+            Aktif
+          </label>
+
+          <button class="ach-btn ach-btn-danger" id="btnDeleteField" type="button">Sil</button>
+        </div>
+      </div>
+    </aside>
+  </section>
+</div>
+
+<link rel="stylesheet" href="/public/ach/form-designer.css">
+<script>
+  window.settings = window.settings || {};
+  window.settings.FE_SOURCEAJAXURL = "{{feSourceAjaxUrl}}";
+</script>
+<script src="/public/ach/form-designer.js"></script>

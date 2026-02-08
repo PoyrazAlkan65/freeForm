@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{#if page_title}}{{page_title}} · {{/if}}EnteraGuide</title>
+
+    <link rel="stylesheet" href="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/adminlte/adminlte.min.css" />
+    <link rel="stylesheet" href="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/css/app.css" />
+    <script src="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/jquery/jquery.min.js"></script>
+    <script src="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{{settings.FE_SOURCEAJAXURL}}wwwroot/assets/adminlte/adminlte.min.js"></script>
+</head>
+
+<body class="login-page bg-body-tertiary">
+    <main class="container py-5">
+        {{{body}}}
+    </main>
+</body>
+
+</html>

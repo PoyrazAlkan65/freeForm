@@ -1,0 +1,6 @@
+<footer class="app-footer border-top bg-body">
+  <div class="container-fluid py-2 small d-flex justify-content-between">
+    <span>© {{year}} AcademyCodeHub</span>
+    <span class="text-secondary">v1.0</span>
+  </div>
+</footer>
